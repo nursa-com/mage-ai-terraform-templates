@@ -206,6 +206,3 @@ resource "aws_s3_bucket" "bucket" {
     }
   )
 }
-
-resource "null_resource" "null_resource" {
-}
