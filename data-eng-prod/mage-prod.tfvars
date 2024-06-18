@@ -7,7 +7,7 @@ common_tags = {
   Service   = "mage"
   Repo      = "nursa-com/mage-ai-terraform-templates"
 }
-docker_image                = "015782078654.dkr.ecr.us-west-2.amazonaws.com/dataeng-mage:df179feceea548e3fdcef8e105c237fc63c60cac"
+docker_image                = "015782078654.dkr.ecr.us-west-2.amazonaws.com/dataeng-mage:f7557016dbf5cad868b67e5925984ac16a9eab24"
 redshift_cluster_id         = "nursa-redshift-cluster-1"
 redshift_dbname             = "dev"
 redshift_user               = "data_team"

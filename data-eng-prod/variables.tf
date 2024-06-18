@@ -84,7 +84,7 @@ variable "common_tags" {
 
 variable "redshift_host" {
   description = "Redshift host"
-  default     = "redshift-cluster-1.cjxjxjxjxjxj.us-west-2.redshift.amazonaws.com"
+  default     = "redshift.prod.nursa.internal"
 }
 
 variable "redshift_dbname" {
@@ -99,6 +99,6 @@ variable "redshift_user" {
 
 variable "redshift_cluster_id" {
   description = "Redshift cluster identifier"
-  default     = "redshift-cluster-1"
+  default     = "nursa-redshift-cluster-1"
 }
 

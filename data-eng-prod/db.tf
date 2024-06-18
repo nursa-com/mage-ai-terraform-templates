@@ -63,7 +63,7 @@ resource "aws_db_instance" "rds" {
   allocated_storage      = 20
   engine                 = "postgres"
   engine_version         = "13.13"
-  instance_class         = "db.t3.micro"
+  instance_class         = "db.t3.medium"
   multi_az               = false
   db_name                = "mage"
   username               = "${jsondecode(data.aws_secretsmanager_secret_version.latest.secret_string)["user"]}"
