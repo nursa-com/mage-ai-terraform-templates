@@ -9,8 +9,12 @@ resource "aws_efs_file_system" "file_system" {
   throughput_mode  = "elastic"
 
    lifecycle_policy {
-    transition_to_ia = "AFTER_7_DAYS"
+    transition_to_ia = "AFTER_1_DAY"
    }
+  lifecycle_policy {
+    transition_to_archive = "AFTER_7_DAYS"
+   }
+    
     
   tags = merge(
     var.common_tags,
