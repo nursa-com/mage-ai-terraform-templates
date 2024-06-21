@@ -19,7 +19,7 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 # Local .terraform directories
-**/.terraform*
+**/.terraform/*
 
 # .tfstate files
 *.tfstate
