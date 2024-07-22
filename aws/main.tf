@@ -41,6 +41,17 @@ resource "aws_cloudwatch_log_group" "log-group" {
   tags = var.common_tags
 }
 
+resource "aws_ssm_parameter" "image_uri" {
+  name  = "/prod/dataeng-mage/image-uri"
+  type  = "String"
+  value = "mage-ai/mage-ai:latest"
+  tags = var.common_tags
+
+  lifecycle {
+    ignore_changes = [value]
+  }
+}
+
 data "template_file" "env_vars" {
   template = file("env_vars.json")
 
@@ -63,7 +74,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
   [
     {
       "name": "${var.app_name}-${var.app_environment}-container",
-      "image": "${var.docker_image}",
+      "image": "${aws_ssm_parameter.image_uri.value}",
       "environment": ${data.template_file.env_vars.rendered},
       "essential": true,
       "mountPoints": [
@@ -214,7 +225,4 @@ resource "aws_s3_bucket_versioning" "versioning_example" {
   versioning_configuration {
     status = "Enabled"
   }
-}
-
-resource "null_resource" "null_resource" {
 }

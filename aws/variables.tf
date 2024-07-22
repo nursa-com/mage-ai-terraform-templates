@@ -42,11 +42,6 @@ variable "app_environment" {
   default     = "production"
 }
 
-variable "docker_image" {
-  description = "Docker image url used in ECS task."
-  default     = "mageai/mageai:latest"
-}
-
 variable "ecs_task_cpu" {
   description = "ECS task cpu"
   default     = 8192
