@@ -43,3 +43,8 @@ There are other resources that need to be created before deploying if they don't
 ## Notes
 
 ### Caching
+
+We customized the deployment to include a Redis cluster using AWS Elastic Cache. Mage has some documentation on this. After setting up the Redis cluster you set `REDIS_URL` environment variable to the cluster url. Mage will automatically use the cache to store pipeline state and avoid race conditions and zombie pipelin runs.
+
+- see [Mage Sacling Docs](https://docs.mage.ai/production/deploying-to-cloud/architecture#scale-web-server-and-schedulers)
+- see [Confluence Doc](https://nursa.atlassian.net/wiki/spaces/DE/pages/1285980181/AWS+Deployment#Redis-Cache)
